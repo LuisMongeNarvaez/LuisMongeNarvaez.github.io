@@ -14,7 +14,6 @@
         color: var(--text);
         transition: background-color 0.3s, color 0.3s;
     }
-    
     :root {
         --bg: #ffffff;
         --text: #24292e;
@@ -68,6 +67,38 @@
         cursor: pointer;
         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
+    /* Accordion Styles */
+    .accordion-header {
+        cursor: pointer;
+        padding: 10px;
+        background: var(--card-bg);
+        border-radius: 6px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .accordion-content {
+        display: none;
+        margin-top: 10px;
+    }
+    .accordion-header.active {
+        color: var(--link);
+    }
+    /* Responsive Gallery */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .gallery img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
 </style>
 </head>
 <body>
@@ -76,51 +107,69 @@
 
 <header class="center">
     <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-12%2008-47-06.png?raw=true" width="200" alt="Profile Picture"/>
-    <h1>👋 Welcome to My GitHub Profile</h1>
-    <p>This is where I showcase my journey as a <b>developer and tech enthusiast</b>, covering <b>web development, data analysis, and automation projects</b>.</p>
+   
+    
+    <h1> 👋 Welcome to My GitHub Profile </h1>
+    
+   
+   
 </header>
 
-<section>
-<h2>👤 About Me</h2>
-<p>Hey there! I’m <b>Luis Monge Narvaez</b> 👋  
-I build web apps, analyze data, work with APIs, and enjoy cloud tools & Linux.  
-Love creating **simple, efficient, and elegant solutions**.</p>
+<section class="center">
+    <div class="accordion-header" onclick="toggleAccordion(this)"> <h2> 👤 About Me </h2> </div>
+    <div class="accordion-content">
+        <p>
+        <h2>  Hey there! I’m <b>Luis Monge Narvaez </h2>
+        I build web apps, analyze data, work with APIs, and enjoy cloud tools & Linux.  
+        Love creating <b>simple, efficient, and elegant solutions</b>.</p>
+    </div>
 </section>
 
-<section>
-<h2>🛠 Skills & Tech Stack</h2>
-<div class="center">
-    <img class="badge" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-    <img class="badge" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"/>
-    <img class="badge" src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
-    <img class="badge" src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
-    <img class="badge" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-    <img class="badge" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-    <img class="badge" src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"/>
-    <img class="badge" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-</div>
+<section class="center">
+    <div class="accordion-header" onclick="toggleAccordion(this)"> <h2> 🛠 Skills & Tech Stack </h2> </div>
+    <div class="accordion-content center">
+        <img class="badge" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+        <img class="badge" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"/>
+        <img class="badge" src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+        <img class="badge" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+        <img class="badge" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+        <img class="badge" src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"/>
+        <img class="badge" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+    </div>
 </section>
 
-<section>
-<h2>🚀 Featured Projects</h2>
-<h3>🔹 <a href="https://luismongenarvaez.github.io/">Portfolio Tracker (Live Web App)</a></h3>
-<p>A responsive <b>Portfolio Tracker</b> built with HTML, TailwindCSS, and Chart.js.  
-👉 <a href="https://luismongenarvaez.github.io/">View Live Demo</a>  
-👉 <a href="https://github.com/LuisMongeNarvaez/LuisMongeNarvaez.github.io">View Code</a></p>
+<section class="center">
+    <div class="accordion-header" onclick="toggleAccordion(this)"> <h2> 🚀 Featured Projects </h2> </div>
+    <div class="accordion-content">
+        <h3>🔹 <a href="https://luismongenarvaez.github.io/">Portfolio Tracker (Live Web App)</a></h3>
+        <p>A responsive <b>Portfolio Tracker</b> built with HTML, TailwindCSS, and Chart.js.  
+        👉 <a href="https://luismongenarvaez.github.io/">View Live Demo</a>  
+        👉 <a href="https://github.com/LuisMongeNarvaez/LuisMongeNarvaez.github.io">View Code</a></p>
+
+        <div class="gallery">
+            <img src="https://raw.githubusercontent.com/LuisMongeNarvaez/LuisMongeNarvaez.github.io/main/screenshots/screenshot1.png" alt="Screenshot 1">
+            <img src="https://raw.githubusercontent.com/LuisMongeNarvaez/LuisMongeNarvaez.github.io/main/screenshots/screenshot2.png" alt="Screenshot 2">
+            <img src="https://raw.githubusercontent.com/LuisMongeNarvaez/LuisMongeNarvaez.github.io/main/screenshots/screenshot3.png" alt="Screenshot 3">
+        </div>
+    </div>
 </section>
 
-<section>
-<h2>🎓 Experience & Certifications</h2>
-<p><b>Certifications:</b> Google IT Support, IBM Data Science, Harvard CS50, MIT, Stanford, UMich, Penn State.</p>
+<section class="center">
+    <div class="accordion-header" onclick="toggleAccordion(this)"> <h2> 🎓 Experience & Certifications </h2> </div>
+    <div class="accordion-content">
+        <p><b>Certifications:</b> Google IT Support, IBM Data Science, Harvard CS50, MIT, Stanford, UMich, Penn State.</p>
+    </div>
 </section>
 
-<section>
-<h2>📫 Contact Me</h2>
-<ul>
-    <li>🌐 <a href="https://luismongenarvaez.github.io">Website</a></li>
-    <li>💼 <a href="https://www.linkedin.com/in/luismongenarvaez">LinkedIn</a></li>
-    <li>📧 Email: lamn1@yahoo.com</li>
-</ul>
+<section class="center">
+    <div class="accordion-header" onclick="toggleAccordion(this)"> <h2>📫 Contact Me </h2>  </div>
+    <div class="accordion-content">
+        <ul>
+            <li>🌐 <a href="https://luismongenarvaez.github.io">Website</a></li>
+            <li>💼 <a href="https://www.linkedin.com/in/luismongenarvaez">LinkedIn</a></li>
+            <li>📧 Email: lamn1@yahoo.com</li>
+        </ul>
+    </div>
 </section>
 
 <script>
@@ -133,6 +182,16 @@ function toggleTheme() {
     } else {
         body.setAttribute('data-theme', 'dark');
         btn.textContent = '☀️ Light Mode';
+    }
+}
+function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const isOpen = content.style.display === "block";
+    document.querySelectorAll(".accordion-content").forEach(c => c.style.display = "none");
+    document.querySelectorAll(".accordion-header").forEach(h => h.classList.remove("active"));
+    if (!isOpen) {
+        content.style.display = "block";
+        header.classList.add("active");
     }
 }
 </script>
