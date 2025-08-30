@@ -157,43 +157,44 @@
   }
 
   /* Estilos de los botones */
-  .button-group {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap; /* ensures they stack on mobile */
+}
 
-  .btn {
-    padding: 12px 20px;
-    border-radius: 8px;
-    background: #0078d7; /* Azul estilo Microsoft */
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* space between icon/flag and text */
+  padding: 8px 16px;   /* smaller + balanced */
+  border-radius: 50px; /* pill style */
+  background: #0078d7; /* Azul estilo Microsoft */
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
 
-  .btn:hover {
-    background: #005a9e;
-  }
+.btn:hover {
+  background: #005a9e;
+  transform: translateY(-2px);
+}
 
-  .btn.secondary {
-     padding: 12px 20px;
-    border-radius: 8px;
-    background: #0078d7; /* Azul estilo Microsoft */
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
+.btn.secondary {
+  background: #00b294; /* verde Microsoft accent */
+}
 
-  .btn.secondary:hover {
-     background: #0078d7; /* Azul estilo Microsoft */
-    color: white;
-  }
+.btn.secondary:hover {
+  background: #00916d;
+}
+
+  
   /* --- MOBILE ADJUSTMENTS --- */
 @media (max-width: 460px) {
   .profile-section {
@@ -257,7 +258,7 @@
                 
         <p>Bilingual IT Support Specialist delivering clear, user-friendly tech solutions in English and Spanish.</p>
          <div class="button-group">
-      <a href="https://github.com/LuisMongeNarvaez/.github/raw/refs/heads/main/Resume%20-%20General%20.docx" target="_blank" class= "btn secondary">📄 Download CV 🇺🇸</a>  
+      <a href="https://github.com/LuisMongeNarvaez/.github/raw/refs/heads/main/Resume%20-%20General%20.docx" target="_blank" class= "btn secondary">Download CV 🇺🇸</a>  
         </div>
     </div>
       </div>
@@ -268,7 +269,7 @@
             <div class="accordion-content">
                 
         <p>Especialista Bilingüe en Soporte Técnico que ofrece soluciones tecnológicas claras y fáciles de entender en inglés y español.</p>
-      <a href="https://github.com/LuisMongeNarvaez/.github/raw/refs/heads/main/General%20Resume%20%20Spanish.docx" target="_blank" class="btn">📩 Descargar CV 🇪🇸</a>
+      <a href="https://github.com/LuisMongeNarvaez/.github/raw/refs/heads/main/General%20Resume%20%20Spanish.docx" target="_blank" class="btn">Descargar CV 🇪🇸</a>
        </div>
     </div>
       </div>
