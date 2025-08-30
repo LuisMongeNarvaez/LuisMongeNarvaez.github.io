@@ -194,6 +194,41 @@
      background: #0078d7; /* Azul estilo Microsoft */
     color: white;
   }
+  /* --- MOBILE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: 40px 10px;   /* less padding */
+  }
+
+  .profile-container {
+    padding: 15px;
+    max-width: 95%;      /* let it stretch almost full width */
+  }
+
+  .profile-pic {
+    width: 120px;        /* smaller picture on phones */
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 1.6rem;   /* shrink heading */
+  }
+
+  h3.tagline {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+}
 </style>
 </head>
 <body>
