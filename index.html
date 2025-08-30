@@ -101,17 +101,29 @@
     }
 
 .profile-section {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL9ozpBMpjbIAJkO0iTZRcU5Xzr4lAySXOUg&s"); 
+  background-size: cover;     /* Makes image cover entire header */
+  background-position: center; /* Keeps image centered */
+  background-repeat: no-repeat;
+  color: black(0, 0, 0);               /* Makes text stand out */
+  padding: 60px 20px;         /* Adds space around content */
   text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #f9f9f9, #eef2f7);
-  border-radius: 12px;
+  h1 {
+  color :#00ff15; /* neon cyan just for the header */
 }
 
-  .profile-container {
-    display: inline-block; 
-    max-width: 800px; 
-  }
+ h3 {
+  color: #48ff00; /* yellow for the tagline */
+}
+  
+}
 
+.profile-container {
+  background: rgba(0, 0, 0, 0.5); /* Optional overlay for readability */
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+}
   .profile-pic {
   width: 180px;
   height: 180px;
