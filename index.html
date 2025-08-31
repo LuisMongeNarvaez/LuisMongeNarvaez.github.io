@@ -302,9 +302,9 @@ function toggleAccordion(element) {
   font-size: 1.2em;
 }
 
-/* Flag styling */
-.flag {
-  margin-right: 6px; /* Matches button-group gap */
+/* Flag and icon styling */
+.flag, .icon {
+  margin-right: 6px;
   font-size: 1.2em;
 }
 
@@ -350,6 +350,68 @@ function toggleAccordion(element) {
 .center {
   text-align: center;
 }
+
+/* Skills section badge layout */
+.accordion-content.center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Gallery styling for Frameworks & Projects */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Skills section badge layout */
+.accordion-content.center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Gallery styling for Frameworks & Projects */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery-item {
+  text-align: center;
+  max-width: 220px;
+}
+
+.gallery-item a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.gallery-item a:hover b {
+  text-decoration: underline;
+}
+
+.gallery-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -502,138 +564,122 @@ h3.tagline {
 </section>
 
 
-    <section class="center">
-        <div class="accordion-header" onclick="toggleAccordion(this)"> <h2> 🛠 Skills & Tech Stack </h2> </div>
-        <div class="accordion-content center">
-            <img class="badge" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-            <img class="badge" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"/>
-            <img class="badge" src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
-            <img class="badge" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-            <img class="badge" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-            <img class="badge" src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"/>
-            <img class="badge" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-        </div>
-        
-    </section>
-
 <section class="center">
-    <div class="accordion-header" onclick="toggleAccordion(this)"> <h2> 🚀 Frameworks & Projects </h2> </div>
-    <div class="accordion-content">
-
-<div class="gallery">
-
-     <!-- Portfolio Tracker   -->
-    <div style="display:inline-block; margin: 15px; text-align:center;">
+  <a href="#" class="accordion-header btn" onclick="toggleAccordion(this)" aria-expanded="false" aria-controls="projects-content">
+    <span class="icon">🚀</span> Frameworks & Projects
+  </a>
+  <div class="accordion-content center" id="projects-content">
+    <div class="gallery">
+      <!-- Portfolio Tracker -->
+      <div class="gallery-item">
         <a href="https://luismongenarvaez.github.io/Portfolio-Tracker/" target="_blank" title="View Flask Portfolio">
-            <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-26%2017-03-20.png?raw=true"width="220" alt="👉 Portfolio Tracker" width="100" style="margin-bottom:10px;"/>
-            <b> Portfolio Tracker (Static)</b>
+          <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-26%2017-03-20.png?raw=true" alt="Portfolio Tracker" class="gallery-img"/>
+          <b>Portfolio Tracker (Static)</b>
         </a>
-    </div>
+      </div>
 
-    <!-- Portfolio Tracker   -->
-    <div style="display:inline-block; margin: 15px; text-align:center;">
+      <!-- Google Sheets -->
+      <div class="gallery-item">
         <a href="https://luismongenarvaez.github.io/Portfolio-Tracker/" target="_blank" title="View Flask Portfolio">
-            <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-26%2018-28-32.png?raw=true "width="200" alt="View Live Demo" width="100" style="margin-bottom:10px;"/>
-            <b>  👉 Google Sheets </b>
+          <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-26%2018-28-32.png?raw=true" alt="Google Sheets" class="gallery-img"/>
+          <b>Google Sheets</b>
         </a>
-    </div>
+      </div>
 
-    <!-- Portfolio Tracker   -->
-    <div style="display:inline-block; margin: 15px; text-align:center;">
+      <!-- View Live Demo -->
+      <div class="gallery-item">
         <a href="https://docs.google.com/spreadsheets/d/18mYSgH1J1LhS4NvLUigd6yUunoZSy6sMpkZnpMUfix0/edit?gid=0#gid=0/" target="_blank" title="View Flask Portfolio">
-            <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-26%2018-29-55.png?raw=true "width="145" alt="👉 Portfolio Tracker" width="100" style="margin-bottom:10px;"/>
-            <b> View Live Demo </b>
+          <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-26%2018-29-55.png?raw=true" alt="Portfolio Tracker" class="gallery-img"/>
+          <b>View Live Demo</b>
         </a>
-    </div>
-     
-     <!-- Flask Project -->
-    <div style="display:inline-block; margin: 15px; text-align:center;">
+      </div>
+
+      <!-- Flask Project -->
+      <div class="gallery-item">
         <a href="https://github.com/LuisMongeNarvaez/My_Flask_Profile" target="_blank" title="View Flask Portfolio">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKKHLwqsvfGllqbxbGEwmQV9hrkKv8gC8NrQ&s" alt="Flask" width="100" style="margin-bottom:10px;"/>
-            <b>Flask Portfolio</b>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKKHLwqsvfGllqbxbGEwmQV9hrkKv8gC8NrQ&s" alt="Flask" class="gallery-img"/>
+          <b>Flask Portfolio</b>
         </a>
-    </div>
-    
-    <!-- Django Project -->
-    <div style="display:inline-block; margin: 15px; text-align:center;">
+      </div>
+
+      <!-- Django Project -->
+      <div class="gallery-item">
         <a href="https://github.com/LuisMongeNarvaez/My_Django_Profile" target="_blank" title="View Django Portfolio">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUx5RI3jY2JPV3HuxRoHNtNmTYhVHkwAspKQ&s" alt="Django" width="100" style="margin-bottom:10px;"/>
-     <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-19%2012-07-03.png?raw=true" alt="PostgreSQL" width="120" style="margin-bottom:10px; display:block;"/>
-            <b>Django | PostgreSQL Portfolio</b>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUx5RI3jY2JPV3HuxRoHNtNmTYhVHkwAspKQ&s" alt="Django" class="gallery-img"/>
+          <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-19%2012-07-03.png?raw=true" alt="PostgreSQL" class="gallery-img"/>
+          <b>Django | PostgreSQL Portfolio</b>
         </a>
-    </div>
-    
-    <!-- FastAPI Project -->
-    <div style="display:inline-block; margin: 15px; text-align:center;">
-        <a href="https://github.com/LuisMongeNarvaez/My_FastAPI_Profile" target="_blank" title="View FastAPI Portfolio">
-            <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-18%2010-14-06.png?raw=true" alt="FastAPI" width="100" style="margin-bottom:10px;"/>
-            <b>FastAPI Portfolio</b>
+      </div>
+
+      <!-- FastAPI Project -->
+      <div class="gallery-item">
+        <a href="https://github.com/LuisMongeNarvaez/My_FastAPI_Pro
+file" target="_blank" title="View FastAPI Portfolio">
+          <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-18%2010-14-06.png?raw=true" alt="FastAPI" class="gallery-img"/>
+          <b>FastAPI Portfolio</b>
         </a>
+      </div>
     </div>
-    
- </section>           
+  </div>
+</section>
   
+
 <section class="center">
-    <div class="accordion-header" onclick="toggleAccordion(this)"> <h2> 🎓 Experience & Certifications </h2> </div>
-    <div class="accordion-content">
-        <section style="text-align:center; padding: 20px;">
+  <a href="#" class="accordion-header btn" onclick="toggleAccordion(this)" aria-expanded="false" aria-controls="experience-content">
+    <span class="icon">🎓</span> Experience & Certifications
+  </a>
+  <div class="accordion-content center" id="experience-content">
+    <div class="gallery">
+      <!-- CS50P Introduction to Programming in Python -->
+      <div class="gallery-item">
+        <a href="https://cs50.harvard.edu/certificates/1e132b1e-f3d4-4bf5-a4e9-3b2f7ab41620" target="_blank" title="CS50P Introduction to Programming in Python">
+          <img class="gallery-img" src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2018-42-17.png?raw=true" alt="CS50P Introduction to Programming in Python">
+          <b>CS50P Introduction to Programming in Python</b>
+        </a>
+      </div>
 
- <div class="gallery">
+      <!-- Introduction to Computer Science and Programming Using Python -->
+      <div class="gallery-item">
+        <a href="https://verify.edx.org/cert/7782cccab0324da590966bc2ac5326a5" target="_blank" title="Introduction to Computer Science and Programming Using Python">
+          <img class="gallery-img" src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2019-32-47.png?raw=true" alt="Introduction to Computer Science and Programming Using Python">
+          <b>Introduction to Computer Science and Programming Using Python</b>
+        </a>
+      </div>
 
-    <!-- CS50P Introduction to Programming in Python -->
-<div style="display:inline-block; margin: 15px; text-align:center;">
-    <a href="https://cs50.harvard.edu/certificates/1e132b1e-f3d4-4bf5-a4e9-3b2f7ab41620" target="_blank" title="CS50P Introduction to Programming in Python">
-        <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2018-42-17.png?raw=true" alt="CS50P Introduction to Programming in Python" width="80" style="margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;"/>
-        <b> CS50P Introduction to Programming in Python </b>
-    </a>
-</div>
+      <!-- Python for Everybody -->
+      <div class="gallery-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/TKWS8SFZMACK" target="_blank" title="Python for Everybody">
+          <img class="gallery-img" src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2007-46-08.png?raw=true" alt="Python for Everybody">
+          <b>Python for Everybody</b>
+        </a>
+      </div>
 
-<!-- Introduction to Computer Science and Programming Using Python -->
-<div style="display:inline-block; margin: 15px; text-align:center;">
-    <a href="https://verify.edx.org/cert/7782cccab0324da590966bc2ac5326a5" target="_blank" title="Introduction to Computer Science and Programming Using Python">
-        <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2019-32-47.png?raw=true" alt="Introduction to Computer Science and Programming Using Python" width="80" style="margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;"/>
-        <b> Introduction to Computer Science and Programming Using Python </b>
-    </a>
-</div>
+      <!-- Python 3 Programming -->
+      <div class="gallery-item">
+        <a href="https://www.coursera.org/account/accomplishments/specialization/XKQ5CYRAT6E6" target="_blank" title="Python 3 Programming">
+          <img class="gallery-img" src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-27%2019-36-46.png?raw=true" alt="Python 3 Programming">
+          <b>Python 3 Programming</b>
+        </a>
+      </div>
 
+      <!-- Introduction to Python Programming -->
+      <div class="gallery-item">
+        <a href="https://coursera.org/share/b84da2e2ff83f4074157558f898892be" target="_blank" title="Introduction to Python Programming">
+          <img class="gallery-img" src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2018-31-04.png?raw=true" alt="Introduction to Python Programming">
+          <b>Introduction to Python Programming</b>
+        </a>
+      </div>
 
-    <!-- Python for Everybody -->
-<div style="display:inline-block; margin: 15px; text-align:center;">
-    <a href="https://www.coursera.org/account/accomplishments/specialization/TKWS8SFZMACK" target="_blank" title="Python for Everybody">
-        <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2007-46-08.png?raw=true" alt="Python for Everybody" width="80" style="margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;"/>
-        <b> Python for Everybody </b>
-    </a>
-</div>
-
-  <!-- Python 3 Programming -->
-<div style="display:inline-block; margin: 15px; text-align:center;">
-    <a href="https://www.coursera.org/account/accomplishments/specialization/XKQ5CYRAT6E6" target="_blank" title="Python 3 Programming">
-        <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-27%2019-36-46.png?raw=true" alt="Python 3 Programming" width="80" style="margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;"/>
-        <b> Python 3 Programming </b>
-    </a>
-</div>  
-
-  <!-- Introduction to Python Programming -->
-<div style="display:inline-block; margin: 15px; text-align:center;">
-    <a href="https://coursera.org/share/b84da2e2ff83f4074157558f898892be" target="_blank" title="Introduction to Python Programming">
-        <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2018-31-04.png?raw=true" alt="Introduction to Python Programming " width="80" style="margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;"/>
-        <b> Introduction to Python Programming </b>
-                </a>
-            </div>    
-
-<!-- Data Analysis Using Python -->
-<div style="display:inline-block; margin: 15px; text-align:center;">
-    <a href="https://www.coursera.org/account/accomplishments/verify/D6TTEC5EYPNX" target="_blank" title="Data Analysis Using Python">
-        <img src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2011-26-08.png?raw=true" alt="Data Analysis Using Python " width="80" style="margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;"/>
-        <b> Data Analysis Using Python </b>
-                </a>
-            </div>    
-
-
-        </div> 
-    </div> 
-</section> 
-
+      <!-- Data Analysis Using Python -->
+      <div class="gallery-item">
+        <a href="https://www.coursera.org/account/accomplishments/verify/D6TTEC5EYPNX" target="_blank" title="Data Analysis Using Python">
+          <img class="gallery-img" src="https://github.com/LuisMongeNarvaez/.github/blob/main/Screenshot%20from%202025-08-28%2011-26-08.png?raw=true" alt="Data Analysis Using Python">
+          <b>Data Analysis Using Python</b>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="center">
     <div class="accordion-header" onclick="toggleAccordion(this)"> <h2>📫 Contact Me </h2>  </div>	
     <div class="accordion-content">
@@ -647,26 +693,47 @@ h3.tagline {
 
 <script>
 function toggleTheme() {
-    const body = document.body;
-    const btn = document.querySelector('.toggle-btn');
-    if (body.getAttribute('data-theme') === 'dark') {
-        body.removeAttribute('data-theme');
-        btn.textContent = '🌙 Dark Mode';
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        btn.textContent = '☀️ Light Mode';
-    }
+  const body = document.body;
+  const btn = document.querySelector('.toggle-btn');
+  if (body.getAttribute('data-theme') === 'dark') {
+    body.removeAttribute('data-theme');
+    btn.textContent = '🌙 Dark Mode';
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀️ Light Mode';
+  }
 }
-function toggleAccordion(header) {
-    const content = header.nextElementSibling;
-    const isOpen = content.style.display === "block";
-    document.querySelectorAll(".accordion-content").forEach(c => c.style.display = "none");
-    document.querySelectorAll(".accordion-header").forEach(h => h.classList.remove("active"));
-    if (!isOpen) {
-        content.style.display = "block";
-        header.classList.add("active");
-    }
+
+function toggleAccordion(element) {
+  const content = element.nextElementSibling;
+  const isActive = content.classList.contains('active');
+
+  // Close all accordion contents
+  document.querySelectorAll('.accordion-content').forEach((content) => {
+    content.classList.remove('active');
+    content.style.display = 'none'; // Clear inline styles
+    content.previousElementSibling.setAttribute('aria-expanded', 'false');
+    content.previousElementSibling.classList.remove('active');
+  });
+
+  // Open the clicked accordion if it wasn't already active
+  if (!isActive) {
+    content.classList.add('active');
+    content.style.display = 'block'; // Ensure visibility
+    element.setAttribute('aria-expanded', 'true');
+    element.classList.add('active');
+  }
 }
+
+// Initialize all accordions as closed on page load
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.accordion-content').forEach((content) => {
+    content.classList.remove('active');
+    content.style.display = 'none'; // Clear any inline display styles
+    content.previousElementSibling.setAttribute('aria-expanded', 'false');
+    content.previousElementSibling.classList.remove('active');
+  });
+});
 </script>
 
 </body>
