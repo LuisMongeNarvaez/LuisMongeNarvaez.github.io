@@ -6,26 +6,29 @@
 <title>Luis Monge Narvaez - GitHub Profile</title>
 <style>
     body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        background-color: var(--bg);
-        color: var(--text);
-        transition: background-color 0.3s, color 0.3s;
-    }
-    :root {
-        --bg: #ffffff;
-        --text: #24292e;
-        --card-bg: #f6f8fa;
-        --link: #0366d6;
-    }
-    [data-theme="dark"] {
-        --bg: #0d1117;
-        --text: #c9d1d9;
-        --card-bg: #161b22;
-        --link: #58a6ff;
-    }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: url('https://example.com/subtle-tech-pattern.png') repeat, var(--bg);
+  background-size: 200px 200px; /* Adjust for pattern size */
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+:root {
+  --bg: #ffffff;
+  --bg-gradient: #e0e7ff; /* Light blue-gray for light mode */
+  --text: #24292e;
+  --card-bg: #f6f8fa;
+  --link: #0366d6;
+   }
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --bg-gradient: #1e2a44; /* Darker blue-gray for dark mode */
+  --text: #c9d1d9;
+  --card-bg: #161b22;
+  --link: #58a6ff;
+}
     header, section {
         max-width: 900px;
         margin: 20px auto;
@@ -67,12 +70,22 @@
         cursor: pointer;
         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
-    /* Accordion header adjustments */
+/* Consolidated accordion-header */
 .accordion-header {
-  cursor: pointer; /* Keep pointer cursor for interactivity */
-  width: 100%; /* Ensure it fits the column */
+  cursor: pointer;
+  width: 100%;
   text-align: center;
   box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 50px;
+  background: #0078d7;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
 /* Ensure accordion content remains unaffected */
@@ -310,10 +323,20 @@ function toggleAccordion(element) {
 
 /* Accordion header adjustments */
 .accordion-header {
-  cursor: pointer; /* Keep pointer cursor for interactivity */
-  width: 100%; /* Ensure it fits the column */
+  cursor: pointer;
+  width: 100%;
   text-align: center;
   box-sizing: border-box;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 50px;
+  background: #0078d7;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
 /* Accordion content */
@@ -324,6 +347,11 @@ function toggleAccordion(element) {
 
 .accordion-content.active {
   display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* Button group */
@@ -495,6 +523,40 @@ h3.tagline {
     font-size: 1.3rem;
   }
 }
+
+footer {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Contact section */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-list li {
+  text-align: center;
+  max-width: 200px;
+  border: 1px solid var(--card-bg);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.contact-list .btn {
+  width: 100%;
+  justify-content: center;
+}
+
 </style>
 </head>
 <body>
@@ -683,30 +745,33 @@ file" target="_blank" title="View FastAPI Portfolio">
     </div>
   </div>
 
-  <section class="center">
-  <a href="#" class="accordion-header btn" onclick="toggleAccordion(this)" aria-expanded="false" aria-controls="contact-content">
+  <!-- Contact Section -->
+<section class="center">
+  <a href="#" class="accordion-header btn" onclick="toggleAccordion(this)" aria-expanded="false" aria-controls="contact-content" role="button">
     <span class="icon">📫</span> Contact Me
   </a>
   <div class="accordion-content center" id="contact-content">
     <ul class="contact-list">
-     
-        <div class="social-links">
-  <a href="https://github.com/LuisMongeNarvaez" class="social-btn github" aria-label="Visit Luis Monge Narvaez's GitHub profile">
-    <span class="icon">💻</span> GitHub
-  </a>
-  
-  <a href="https://linkedin.com/in/LuisMongeNarvaez" class="social-btn linkedin" aria-label="Visit Luis Monge Narvaez's LinkedIn profile">
-    <span class="icon">👔</span> LinkedIn
-  </a>
-
-   <a href="mailto:lamn1@yahoo.com" class="social-btn github" aria-label="lamn1@yahoo.com">
-    <span class="icon">💻</span> Email
-  </a>  
-</div>
-      
+      <li>
+        <a href="https://github.com/LuisMongeNarvaez" class="btn github" target="_blank" aria-label="Visit Luis Monge Narvaez's GitHub profile">
+          <span class="icon">💻</span> GitHub
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/LuisMongeNarvaez" class="btn linkedin" target="_blank" aria-label="Visit Luis Monge Narvaez's LinkedIn profile">
+          <span class="icon">👔</span> LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="mailto:lamn1@yahoo.com" class="btn github" aria-label="Email Luis Monge Narvaez">
+          <span class="icon">📧</span> Email
+        </a>
+      </li>
     </ul>
   </div>
 </section>
+
+
 
 <script>
 function toggleTheme() {
@@ -754,4 +819,8 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 </body>
+<footer class="center">
+  <p>&copy; 2025 Luis Monge Narvaez. All rights reserved.</p>
+</footer>
+
 </html>
