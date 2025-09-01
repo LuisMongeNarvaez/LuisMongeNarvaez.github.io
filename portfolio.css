@@ -420,18 +420,49 @@ function toggleAccordion(element) {
   width: 100%;
   max-width: 220px;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  border-radius: 10px; /* Slightly softer corners */
+  border: 2px solid #00ff15; /* Neon cyan border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
   margin-bottom: 10px;
   display: block;
+  position: relative; /* For overlay */
+  overflow: hidden; /* Contain overlay */
 }
 
 .gallery-img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Subtle scale */
+  box-shadow: 0 6px 15px rgba(0, 255, 21, 0.4); /* Neon glow effect */
 }
 
+.gallery-img::after {
+  content: attr(alt); /* Use alt text as caption */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  color: #48ff00; /* Yellow text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
 
+.gallery-img:hover::after {
+  opacity: 1;
+}
+
+.gallery-item .gallery-img + .gallery-img {
+  margin-top: 10px; /* Space between stacked images */
+  border-color: #48ff00; /* Alternate neon yellow for second image */
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .subtitle-columns {
