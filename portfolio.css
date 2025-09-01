@@ -1,318 +1,81 @@
 <style>
-    body {
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   background: url('https://example.com/subtle-tech-pattern.png') repeat, var(--bg);
-  background-size: 200px 200px; /* Adjust for pattern size */
+  background-size: 200px 200px;
   color: var(--text);
   transition: background 0.3s, color 0.3s;
 }
+
 :root {
   --bg: #ffffff;
-  --bg-gradient: #e0e7ff; /* Light blue-gray for light mode */
+  --bg-gradient: #e0e7ff;
   --text: #24292e;
   --card-bg: #f6f8fa;
   --link: #0366d6;
-   }
+}
+
 [data-theme="dark"] {
   --bg: #0d1117;
-  --bg-gradient: #1e2a44; /* Darker blue-gray for dark mode */
+  --bg-gradient: #1e2a44;
   --text: #c9d1d9;
   --card-bg: #161b22;
   --link: #58a6ff;
 }
-    header, section {
-        max-width: 900px;
-        margin: 20px auto;
-        background: var(--card-bg);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    h1, h2, h3 {
-        margin-top: 0;
-    }
-    img {
-        border-radius: 8px;
-        max-width: 100%;
-    }
-    .center {
-        text-align: center;
-    }
-    a {
-        color: var(--link);
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-    .badge {
-        display: inline-block;
-        margin: 5px;
-    }
-    .toggle-btn {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 8px;
-        background: var(--card-bg);
-        color: var(--text);
-        cursor: pointer;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-    /* Accordion header adjustments */
-.accordion-header {
-  cursor: pointer; /* Keep pointer cursor for interactivity */
-  width: 100%; /* Ensure it fits the column */
-  text-align: center;
-  box-sizing: border-box;
-}
 
-/* Ensure accordion content remains unaffected */
-.accordion-content {
-  display: none; /* Hidden by default */
-  padding: 15px;
-}
-
-/* Show content when accordion is active (assuming JavaScript adds 'active' class) */
-.accordion-content.active {
-  display: block;
-}
-  .gallery-img {
-  border: 3px solid transparent;
-  border-image: linear-gradient(to right, #00ff15, #48ff00) 1;
-}
-.gallery-img {
-  animation: fadeIn 0.5s ease-in;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.gallery img:hover {
-        transform: scale(1.05);
-    }
-
-<img src="..." alt="..." class="gallery-img" loading="lazy"/>
-
-.profile-section {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL9ozpBMpjbIAJkO0iTZRcU5Xzr4lAySXOUg&s"); 
-  background-size: cover;     /* Makes image cover entire header */
-  background-position: center; /* Keeps image centered */
-  background-repeat: no-repeat;
-  color: black(0, 0, 0);               /* Makes text stand out */
-  padding: 60px 20px;         /* Adds space around content */
-  text-align: center;
-  h1 {
-  color :#00ff15; /* neon cyan just for the header */
-}
-
- h3 {
-  color: #48ff00; /* yellow for the tagline */
-}
-  
-}
-
-.profile-container {
-  background: rgba(0, 0, 0, 0.5); /* Optional overlay for readability */
-  display: inline-block;
+header, section, footer {
+  max-width: 900px;
+  margin: 20px auto;
+  background: var(--card-bg);
   padding: 20px;
   border-radius: 10px;
-}
-  .profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  h1 {
-    margin: 10px 0;
-    font-size: 28px;
-  }
-
-  /* Column layout */
-.subtitle-columns {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.column {
-  flex: 1;
-  max-width: 400px;
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+img {
+  border-radius: 8px;
+  max-width: 100%;
 }
 
 .center {
   text-align: center;
 }
 
-
-function toggleAccordion(element) {
-  const content = element.nextElementSibling;
-  const isActive = content.classList.contains('active');
-
-  // Close all accordion contents
-  document.querySelectorAll('.accordion-content').forEach((content) => {
-    content.classList.remove('active');
-  });
-
-  // Toggle the clicked accordion
-  if (!isActive) {
-    content.classList.add('active');
-  }
-}
-
-
-
-@media (max-width: 768px) {
-  .subtitle-columns {
-    flex-direction: column;
-    align-items: center;
-  }
-  .column {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-
-html
-
-<a href="#" class="accordion-header btn lang" onclick="toggleAccordion(this)" aria-expanded="false" aria-controls="english-content">
-  <span class="flag">🇺🇸</span> English
-</a>
-<div class="accordion-content" id="english-content">
-  <!-- Content -->
-</div>
-
-Update the JavaScript to toggle aria-expanded:javascript
-
-function toggleAccordion(element) {
-  const content = element.nextElementSibling;
-  const isActive = content.classList.contains('active');
-
-  // Close all accordion contents
-  document.querySelectorAll('.accordion-content').forEach((content) => {
-    content.classList.remove('active');
-    content.previousElementSibling.setAttribute('aria-expanded', 'false');
-  });
-
-  // Toggle the clicked accordion
-  if (!isActive) {
-    content.classList.add('active');
-    element.setAttribute('aria-expanded', 'true');
-  }
-}
-
-
-
-  /* Estilos de los botones */
-.button-group {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap; /* ensures they stack on mobile */
-}
-
-/* Button base styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px; /* Matches button-group */
-  border-radius: 50px; /* Pill shape */
-  background: #0078d7; /* Microsoft blue */
-  color: white;
+a {
+  color: var(--link);
   text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  transition: transform 0.2s ease, background 0.3s ease;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
-.btn:hover {
-  background: #005a9e;
-  transform: translateY(-2px);
+a:hover {
+  text-decoration: underline;
 }
 
-.btn.secondary {
-  background: #00b294; /* Microsoft green */
+.badge {
+  display: inline-block;
+  margin: 5px;
 }
 
-.btn.secondary:hover {
-  background: #00916d;
+.toggle-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-/* Social button base styles */
-.social-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 16px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  color: #00ff15; /* Changed to neon cyan to match h1 */
-  transition: transform 0.2s ease, background 0.3s ease;
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
-}
-
-/* GitHub button */
-.social-btn.github {
-  background: #24292e; /* GitHub dark gray */
-}
-
-.social-btn.github:hover {
-  background: #1a1e22;
-  transform: translateY(-2px);
-}
-
-/* LinkedIn button */
-.social-btn.linkedin {
-  background: #0a66c2; /* LinkedIn blue */
-}
-
-.social-btn.linkedin:hover {
-  background: #074c91;
-  transform: translateY(-2px);
-}
-
-/* Dark mode adjustments */
-[data-theme="dark"] .social-btn {
-  color: #00ff15; /* Maintain neon cyan in dark mode */
-  box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
-}
-
-[data-theme="dark"] .social-btn.github {
-  background: #33383f; /* Lighter gray for dark mode */
-}
-[data-theme="dark"] .social-btn.linkedin {
-  background: #2a7bc6; /* Lighter blue for dark mode */
-}
-
-/* Icon styling */
-
-.social-btn .icon {
-  margin-right: 6px;
-  font-size: 1.2em;
-}
-
-/* Flag and icon styling */
-.flag, .icon {
-  margin-right: 6px;
-  font-size: 1.2em;
-}
-
-/* Accordion header adjustments */
+/* Accordion styles */
 .accordion-header {
   cursor: pointer;
   width: 100%;
@@ -330,9 +93,8 @@ function toggleAccordion(element) {
   box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
-/* Accordion content */
 .accordion-content {
-  display: none; /* Hidden by default */
+  display: none;
   padding: 15px;
 }
 
@@ -340,61 +102,102 @@ function toggleAccordion(element) {
   display: block;
   animation: fadeIn 0.3s ease-in;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* Button group */
+/* Button group styles */
 .button-group {
-  margin-top: 15px; /* Reduced for better spacing */
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
 
-/* Column layout */
-.subtitle-columns {
-  display: flex;
+.btn {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: #0078d7;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
-.column {
-  flex: 1;
-  max-width: 400px;
+.btn:hover {
+  background: #005a9e;
+  transform: translateY(-2px);
 }
 
-.center {
-  text-align: center;
+.btn.secondary {
+  background: #00b294;
 }
 
-/* Skills section badge layout */
-.accordion-content.center {
-  display: flex;
-  flex-wrap: wrap;
+.btn.secondary:hover {
+  background: #00916d;
+}
+
+/* Social button styles */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #00ff15;
+  transition: transform 0.2s ease, background 0.3s ease;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
 }
 
-/* Gallery styling for Frameworks & Projects */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+.social-btn.github {
+  background: #24292e;
 }
 
-/* Skills section badge layout */
-.accordion-content.center {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+.social-btn.github:hover {
+  background: #1a1e22;
+  transform: translateY(-2px);
 }
 
-/* Gallery styling for Frameworks & Projects */
+.social-btn.linkedin {
+  background: #0a66c2;
+}
+
+.social-btn.linkedin:hover {
+  background: #074c91;
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .social-btn {
+  color: #00ff15;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] .social-btn.github {
+  background: #33383f;
+}
+
+[data-theme="dark"] .social-btn.linkedin {
+  background: #2a7bc6;
+}
+
+/* Icon and flag styling */
+.flag, .icon {
+  margin-right: 6px;
+  font-size: 1.2em;
+}
+
+/* Gallery styling */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -420,18 +223,19 @@ function toggleAccordion(element) {
   width: 100%;
   max-width: 220px;
   height: auto;
-  border-radius: 10px; /* Slightly softer corners */
+  border-radius: 10px;
   border: 2px solid #00ff15; /* Neon cyan border */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Enhanced shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 10px;
   display: block;
-  position: relative; /* For overlay */
-  overflow: hidden; /* Contain overlay */
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in; /* Fade-in animation */
 }
 
 .gallery-img:hover {
-  transform: scale(1.05); /* Subtle scale */
+  transform: scale(1.05); /* Subtle scale on hover */
   box-shadow: 0 6px 15px rgba(0, 255, 21, 0.4); /* Neon glow effect */
 }
 
@@ -456,27 +260,12 @@ function toggleAccordion(element) {
 }
 
 .gallery-img:hover::after {
-  opacity: 1;
+  opacity: 1; /* Show overlay on hover */
 }
 
 .gallery-item .gallery-img + .gallery-img {
-  margin-top: 10px; /* Space between stacked images */
+  margin-top: 10px;
   border-color: #48ff00; /* Alternate neon yellow for second image */
-}
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .subtitle-columns {
-    flex-direction: column;
-    align-items: center;
-  }
-  .column {
-    width: 100%;
-    max-width: none;
-  }
-  .accordion-header {
-    padding: 8px 12px; /* Slightly smaller on mobile */
-    font-size: 13px;
-  }
 }
 
 /* Profile section adjustments */
